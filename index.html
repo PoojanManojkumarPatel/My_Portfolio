@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name — Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SCAN LINE OVERLAY -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- BACKGROUND -->
+  <div class="void-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="pool-a" cx="20%" cy="30%" r="40%">
+          <stop offset="0%" stop-color="#2a0f5e" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#030309" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="pool-b" cx="80%" cy="70%" r="35%">
+          <stop offset="0%" stop-color="#0f1a4e" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#030309" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="pool-c" cx="50%" cy="50%" r="30%">
+          <stop offset="0%" stop-color="#1a0f3e" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#030309" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="particle-glow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect width="1440" height="900" fill="#030309"/>
+      <rect width="1440" height="900" fill="url(#pool-a)"/>
+      <rect width="1440" height="900" fill="url(#pool-b)"/>
+      <rect width="1440" height="900" fill="url(#pool-c)"/>
+      <g stroke="rgba(140,120,220,0.04)" stroke-width="1">
+        <line x1="0"    y1="225" x2="1440" y2="225"/>
+        <line x1="0"    y1="450" x2="1440" y2="450"/>
+        <line x1="0"    y1="675" x2="1440" y2="675"/>
+        <line x1="360"  y1="0"   x2="360"  y2="900"/>
+        <line x1="720"  y1="0"   x2="720"  y2="900"/>
+        <line x1="1080" y1="0"   x2="1080" y2="900"/>
+      </g>
+      <g fill="rgba(180,160,240,0.6)" filter="url(#particle-glow)">
+        <circle cx="180"  cy="180" r="1">  <animate attributeName="opacity" values="0.1;0.7;0.1" dur="4s"   repeatCount="indefinite"/></circle>
+        <circle cx="760"  cy="130" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2"   dur="3s"   repeatCount="indefinite" begin="0.8s"/></circle>
+        <circle cx="1180" cy="300" r="1">  <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5.5s" repeatCount="indefinite" begin="1.5s"/></circle>
+        <circle cx="380"  cy="680" r="1.5"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.5s" repeatCount="indefinite" begin="0.3s"/></circle>
+        <circle cx="980"  cy="580" r="1">  <animate attributeName="opacity" values="0.1;0.7;0.1" dur="4.5s" repeatCount="indefinite" begin="2s"/></circle>
+        <circle cx="620"  cy="420" r="2">  <animate attributeName="opacity" values="0.1;0.5;0.1" dur="6s"   repeatCount="indefinite" begin="1s"/></circle>
+        <circle cx="80"   cy="480" r="1">  <animate attributeName="opacity" values="0.1;0.6;0.1" dur="7s"   repeatCount="indefinite" begin="0.5s"/></circle>
+        <circle cx="1320" cy="660" r="1.5"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s"   repeatCount="indefinite" begin="2.5s"/></circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- NAV -->
+  <!-- Replace [XX] with your initials -->
+  <nav>
+    <a href="#hero" class="nav-sigil">
+      <span class="sigil-bracket">[</span>XX<span class="sigil-bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about"      data-index="01">Profile</a></li>
+      <li><a href="#projects"   data-index="02">Projects</a></li>
+      <li><a href="#skills"     data-index="03">Abilities</a></li>
+      <li><a href="#experience" data-index="04">Log</a></li>
+      <li><a href="#contact"    data-index="05">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-sys-tag hero-animate-1">
+        <span class="sys-bracket">◂</span>
+        SYS // AWAKENED_PROFILE_LOADED // CITY.COUNTRY
+        <span class="sys-bracket">▸</span>
+      </div>
+
+      <!-- Replace FirstName / LastName with your name -->
+      <h1 class="hero-name hero-animate-2">
+        <span class="name-legendary" data-text="FirstName">FirstName</span>
+        <span class="name-family">LastName</span>
+      </h1>
+
+      <!-- Replace role values with your roles -->
+      <div class="hero-class-line hero-animate-3">
+        <span class="class-tag">ROLES:</span>
+        <span class="class-value">Role One</span>
+        <span class="class-sep">//</span>
+        <span class="class-value">Role Two</span>
+        <span class="class-sep">//</span>
+        <span class="class-value">Role Three</span>
+      </div>
+
+      <div class="hero-divider hero-animate-4" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Replace with your tagline / one-liner -->
+      <p class="hero-tagline hero-animate-5">
+        Your tagline goes here — what you build, what you care about.
+        <br>A second line if you need it.
+      </p>
+
+      <div class="hero-ctas hero-animate-6">
+        <a href="#projects" class="btn-primary"><span>View My Work</span></a>
+        <a href="#contact"  class="btn-secondary"><span>Get In Touch</span></a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="section-inner">
+
+      <div class="section-header reveal">
+        <div class="sys-label">SYS.01 // ENTITY_PROFILE</div>
+        <h2 class="section-title">About <span class="ice">Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Stat panel — replace values with your own -->
+        <div class="about-panel reveal">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+
+          <div class="entity-id">
+            <!-- Replace XX with your initials -->
+            <div class="entity-initials">XX</div>
+            <div class="entity-rank">
+              <span class="rank-label">RANK</span>
+              <!-- Replace with your rank / title -->
+              <span class="rank-value legendary-text">YOUR RANK</span>
+            </div>
+          </div>
+
+          <div class="entity-stats">
+            <div class="entity-stat">
+              <span class="estat-label">STATUS</span>
+              <!-- e.g. Open to Opportunities / Employed / Freelancing -->
+              <span class="estat-value"><span class="status-dot"></span>Your Status</span>
+            </div>
+            <div class="entity-stat">
+              <span class="estat-label">CITADEL</span>
+              <!-- Replace with your city / country -->
+              <span class="estat-value">City, Country</span>
+            </div>
+            <div class="entity-stat">
+              <span class="estat-label">ASPECT</span>
+              <!-- Replace with your current role / title -->
+              <span class="estat-value">Your Role</span>
+            </div>
+            <div class="entity-stat">
+              <span class="estat-label">NO. OF ECHOS</span>
+              <!-- Replace with your project count -->
+              <span class="estat-value legendary-text">N+ Projects</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="about-text">
+          <!-- Replace with your bio -->
+          <p class="reveal">
+            <strong>Hey — I'm [Your Name].</strong> A <span class="ice-text">[Your Degree]</span> graduate from [Your University] — [Major], [Minor]. I [brief highlight of what you've built or done], and I care deeply about [your focus area] and the craft behind it.
+          </p>
+          <!-- Replace with a personal/hobby note, or remove this paragraph -->
+          <p class="reveal reveal-delay-1">
+            Outside the code: <strong>[Hobby or interest]</strong>, <em>[another interest]</em>, and [one more thing] when time allows.
+          </p>
+          <!-- Replace stat numbers and labels -->
+          <div class="about-stats reveal reveal-delay-4">
+            <div class="stat-box">
+              <div class="stat-num">N+</div>
+              <div class="stat-label">STAT LABEL ONE</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num legendary-text">N+</div>
+              <div class="stat-label">STAT LABEL TWO</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">∞</div>
+              <div class="stat-label">STAT LABEL THREE</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects">
+    <div class="section-inner">
+
+      <div class="section-header reveal">
+        <div class="sys-label">SYS.02 // PROJECT_REGISTRY</div>
+        <h2 class="section-title">My <span class="ice">Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ─── 001 FEATURED PROJECT ─── -->
+        <!-- The featured card spans 2 columns. Best used for your strongest project. -->
+        <div class="project-card featured reveal">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-body">
+            <div class="project-number legendary-text">// 001 — LEGENDARY</div>
+            <!-- Replace data-text and inner text with your project name -->
+            <div class="project-name" data-text="Project Name">Project Name</div>
+            <!-- Replace with project category / type -->
+            <div class="project-type">Category · Sub-Category</div>
+            <!-- Replace with your project description -->
+            <p class="project-desc">
+              Describe what this project does, what problem it solves, and what makes it interesting. Mention the key technical achievement and your role in building it.
+            </p>
+            <!-- Replace stack tags with your tech stack -->
+            <div class="project-stack">
+              <span class="stack-tag">Tech 1</span>
+              <span class="stack-tag">Tech 2</span>
+              <span class="stack-tag">Tech 3</span>
+              <span class="stack-tag">Tech 4</span>
+            </div>
+            <!-- Replace href with your GitHub link. Add a live demo link if available. -->
+            <div class="project-links">
+              <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+                <img src="images/github.png" alt="GitHub" class="github-icon">
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-sigil" aria-hidden="true">
+            <svg viewBox="0 0 200 200" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10"  y="10"  width="180" height="180" fill="none" stroke="rgba(140,120,220,0.12)" stroke-width="1"/>
+              <rect x="30"  y="30"  width="140" height="140" fill="none" stroke="rgba(140,120,220,0.08)" stroke-width="1"/>
+              <line x1="100" y1="10"  x2="100" y2="190" stroke="rgba(140,120,220,0.06)" stroke-width="1"/>
+              <line x1="10"  y1="100" x2="190" y2="100" stroke="rgba(140,120,220,0.06)" stroke-width="1"/>
+              <polygon points="100,20 180,180 20,180" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <text x="100" y="118" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="36" fill="rgba(201,168,76,0.25)">&lt;/&gt;</text>
+              <rect x="10" y="10" width="180" height="180" fill="none" stroke="rgba(140,120,220,0.2)" stroke-width="0.5" stroke-dasharray="4 8">
+                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="30s" repeatCount="indefinite"/>
+              </rect>
+            </svg>
+          </div>
+        </div>
+
+        <!-- ─── 002 ─── -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 002</div>
+          <div class="project-name" data-text="Project Name">Project Name</div>
+          <div class="project-type">Category · Sub-Category</div>
+          <p class="project-desc">
+            Describe what this project does, what problem it solves, and what you learned or achieved by building it.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Tech 1</span>
+            <span class="stack-tag">Tech 2</span>
+            <span class="stack-tag">Tech 3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- ─── 003 ─── -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 003</div>
+          <div class="project-name" data-text="Project Name">Project Name</div>
+          <div class="project-type">Category · Sub-Category</div>
+          <p class="project-desc">
+            Describe what this project does, what problem it solves, and what you learned or achieved by building it.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Tech 1</span>
+            <span class="stack-tag">Tech 2</span>
+            <span class="stack-tag">Tech 3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- ─── 004 ─── -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 004</div>
+          <div class="project-name" data-text="Project Name">Project Name</div>
+          <div class="project-type">Category · Sub-Category</div>
+          <p class="project-desc">
+            Describe what this project does, what problem it solves, and what you learned or achieved by building it.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Tech 1</span>
+            <span class="stack-tag">Tech 2</span>
+            <span class="stack-tag">Tech 3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- ─── 005 ─── -->
+        <div class="project-card reveal">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 005</div>
+          <div class="project-name" data-text="Project Name">Project Name</div>
+          <div class="project-type">Category · Sub-Category</div>
+          <p class="project-desc">
+            Describe what this project does, what problem it solves, and what you learned or achieved by building it.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Tech 1</span>
+            <span class="stack-tag">Tech 2</span>
+            <span class="stack-tag">Tech 3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- ─── 006 ─── -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 006</div>
+          <div class="project-name" data-text="Project Name">Project Name</div>
+          <div class="project-type">Category · Sub-Category</div>
+          <p class="project-desc">
+            Describe what this project does, what problem it solves, and what you learned or achieved by building it.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Tech 1</span>
+            <span class="stack-tag">Tech 2</span>
+            <span class="stack-tag">Tech 3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/your-repo" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills">
+    <div class="section-inner">
+
+      <div class="section-header reveal">
+        <div class="sys-label">SYS.03 // ABILITY_REGISTRY</div>
+        <h2 class="section-title">My <span class="ice">Skills</span></h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- ─── Category 1: Languages ─── -->
+        <!-- Replace skill names, levels, and data-width (0–100) -->
+        <div class="skill-category reveal">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="skill-cat-title">[ LANGUAGES ]</div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Language 1</span><span class="skill-level">ADVANCED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Language 2</span><span class="skill-level">ADVANCED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Language 3</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Language 4</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Language 5</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Category 2: Frameworks & Tools ─── -->
+        <div class="skill-category reveal reveal-delay-1">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="skill-cat-title">[ FRAMEWORKS & TOOLS ]</div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Framework 1</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Framework 2</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Tool 1</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Tool 2</span><span class="skill-level">COMFORTABLE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Tool 3</span><span class="skill-level">COMFORTABLE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="72"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Category 3: Concepts & Craft ─── -->
+        <div class="skill-category reveal reveal-delay-2">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="skill-cat-title">[ CONCEPTS & CRAFT ]</div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Concept 1</span><span class="skill-level">STRONG</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Concept 2</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Concept 3</span><span class="skill-level">STRONG</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Concept 4</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="62"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Concept 5</span><span class="skill-level">PRACTISED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience">
+    <div class="section-inner">
+
+      <div class="section-header reveal">
+        <div class="sys-label">SYS.04 // ACHIEVEMENT_LOG</div>
+        <h2 class="section-title">My <span class="ice">Experience</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- ─── Entry 1: Most recent first ─── -->
+        <div class="timeline-item reveal">
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="panel-corner tl"></div>
+            <div class="panel-corner tr"></div>
+            <!-- Replace with actual dates e.g. [ JAN 2024 — DEC 2024 ] -->
+            <div class="timeline-date">[ MON YYYY — MON YYYY ]</div>
+            <!-- Replace with your role title -->
+            <div class="timeline-role">Your Role Title</div>
+            <!-- Replace with company name and location -->
+            <div class="timeline-org">Company Name · City, Country</div>
+            <!-- Replace with what you did, what you built, key impact -->
+            <p class="timeline-desc">
+              Describe your responsibilities and achievements here. Focus on what you built, shipped, or improved. Include measurable outcomes where possible (e.g. improved X by Y%, built feature used by N users).
+            </p>
+            <!-- Replace tags with relevant skills used -->
+            <div class="timeline-tags">
+              <span class="ttag">Skill 1</span>
+              <span class="ttag">Skill 2</span>
+              <span class="ttag">Skill 3</span>
+              <span class="ttag">Skill 4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Entry 2 ─── -->
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="panel-corner tl"></div>
+            <div class="panel-corner tr"></div>
+            <div class="timeline-date">[ MON YYYY — MON YYYY ]</div>
+            <div class="timeline-role">Your Role Title</div>
+            <div class="timeline-org">Organisation Name · City, Country</div>
+            <p class="timeline-desc">
+              Describe your responsibilities and achievements here. Focus on what you built, studied, or contributed. Include any notable outcomes, awards, or projects.
+            </p>
+            <div class="timeline-tags">
+              <span class="ttag">Skill 1</span>
+              <span class="ttag">Skill 2</span>
+              <span class="ttag">Skill 3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Entry 3 ─── -->
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="panel-corner tl"></div>
+            <div class="panel-corner tr"></div>
+            <div class="timeline-date">[ MON YYYY — PRESENT ]</div>
+            <div class="timeline-role">Your Role Title</div>
+            <div class="timeline-org">Organisation Name · City, Country</div>
+            <p class="timeline-desc">
+              Describe your responsibilities and achievements here. Even non-technical roles are worth including — highlight transferable skills like communication, discipline, and problem-solving.
+            </p>
+            <div class="timeline-tags">
+              <span class="ttag">Skill 1</span>
+              <span class="ttag">Skill 2</span>
+              <span class="ttag">Skill 3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Entry 4 ─── -->
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="panel-corner tl"></div>
+            <div class="panel-corner tr"></div>
+            <div class="timeline-date">[ MON YYYY — MON YYYY ]</div>
+            <div class="timeline-role">Your Role Title</div>
+            <div class="timeline-org">Organisation Name · City, Country</div>
+            <p class="timeline-desc">
+              Describe your responsibilities and achievements here. Keep it concise and focused on the skills and outcomes most relevant to the roles you're targeting.
+            </p>
+            <div class="timeline-tags">
+              <span class="ttag">Skill 1</span>
+              <span class="ttag">Skill 2</span>
+              <span class="ttag">Skill 3</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact">
+    <div class="contact-inner">
+
+      <div class="sys-label contact-sys-label reveal">SYS.05 // TETHER</div>
+
+      <h2 class="contact-heading reveal">
+        Let's <span class="ice">Connect</span>
+      </h2>
+
+      <!-- Replace with your own message -->
+      <p class="contact-sub reveal">
+        Whether you have a role, a project, or just want to talk tech — I'm always open to a conversation.
+      </p>
+
+      <!-- Replace with your email address -->
+      <a href="mailto:your.email@example.com" class="contact-email reveal">your.email@example.com</a>
+
+      <div class="contact-links reveal">
+        <!-- Replace href with your LinkedIn profile URL -->
+        <a href="https://www.linkedin.com/in/your-profile/" target="_blank" class="contact-link">
+          <img src="images/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+          LinkedIn
+        </a>
+        <!-- Replace href with your GitHub profile URL -->
+        <a href="https://github.com/your-username" target="_blank" class="contact-link">
+          <img src="images/github.png" alt="GitHub" class="github-icon">
+          GitHub
+        </a>
+        <!-- Replace href with your resume file path -->
+        <a href="/resume.pdf" class="contact-link">
+          <img src="images/resume.png" alt="Resume" class="linkedin-icon">
+          Resume
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- Replace with your name, city, and build year -->
+  <footer>
+    <p>
+      <span class="footer-bracket">[ </span>
+      Your Name · City, Country · SYS_BUILD_YYYY
+      <span class="footer-bracket"> ]</span>
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
