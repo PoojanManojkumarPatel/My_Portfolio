@@ -1174,18 +1174,19 @@ footer p {
   background: var(--panel);
   border:     1px solid var(--border);
   padding:    4px;
+  height:     80vh;
 }
 
 .viewer-frame-wrapper iframe {
   display:    block;
   width:      100%;
-  height:     80vh;
+  height:     100%;
   border:     none;
   background: #1a1a2e;
 }
 
 @media (max-width: 600px) {
-  .viewer-frame-wrapper iframe { height: 60vh; }
+  .viewer-frame-wrapper { height: 60vh; }
   .resume-header { flex-direction: column; align-items: flex-start; }
 }
 
