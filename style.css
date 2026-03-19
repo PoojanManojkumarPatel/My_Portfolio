@@ -184,7 +184,9 @@ section { position: relative; z-index: 1; }
   letter-spacing: 0.05em;
   line-height:    1.1;
 }
-.section-title .ice { color: var(--ice); text-shadow: 0 0 20px var(--ice-glow); }
+.section-title .ice,
+.contact-heading .ice,
+.resume-title .ice    { color: var(--ice); text-shadow: 0 0 20px var(--ice-glow); }
 
 /* ══════════ SCROLL REVEAL ══════════ */
 .reveal {
@@ -1045,8 +1047,6 @@ section { position: relative; z-index: 1; }
   letter-spacing: 0.05em;
   margin:         1rem 0;
 }
-.contact-heading .ice { color: var(--ice); text-shadow: 0 0 20px var(--ice-glow); }
-
 .contact-sub {
   color:      var(--text-dim);
   font-size:  0.98rem;
@@ -1125,6 +1125,68 @@ footer p {
 .legendary-text {
   color:       var(--gold) !important;
   text-shadow: 0 0 15px var(--gold-glow) !important;
+}
+
+/* ══════════ RESUME PAGE ══════════ */
+.resume-page {
+  position:       relative;
+  z-index:        1;
+  min-height:     100vh;
+  display:        flex;
+  flex-direction: column;
+}
+
+.resume-header {
+  padding:         5.5rem 2rem 1.5rem;
+  max-width:       1100px;
+  margin:          0 auto;
+  width:           100%;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             1rem;
+  flex-wrap:       wrap;
+}
+
+.resume-title {
+  font-family:    'Cinzel', serif;
+  font-weight:    600;
+  font-size:      clamp(1.6rem, 4vw, 2.4rem);
+  color:          var(--text);
+  letter-spacing: 0.05em;
+}
+.resume-actions {
+  display:  flex;
+  gap:      0.8rem;
+  flex-wrap: wrap;
+}
+
+.resume-viewer {
+  flex:       1;
+  max-width:  1100px;
+  margin:     0 auto 3rem;
+  width:      100%;
+  padding:    0 2rem;
+}
+
+.viewer-frame-wrapper {
+  position:   relative;
+  background: var(--panel);
+  border:     1px solid var(--border);
+  padding:    4px;
+}
+
+.viewer-frame-wrapper iframe {
+  display:    block;
+  width:      100%;
+  height:     80vh;
+  border:     none;
+  background: #1a1a2e;
+}
+
+@media (max-width: 600px) {
+  .viewer-frame-wrapper iframe { height: 60vh; }
+  .resume-header { flex-direction: column; align-items: flex-start; }
 }
 
 /* ══════════ RESPONSIVE ══════════ */
