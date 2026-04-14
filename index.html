@@ -70,7 +70,30 @@
       <li><a href="#experience" data-index="04">Log</a></li>
       <li><a href="#contact"    data-index="05">Contact</a></li>
     </ul>
+    <a href="resume.html" class="nav-resume"><span>Resume</span></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
   </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-void" aria-hidden="true"></div>
+    <button class="mobile-nav-close" aria-label="Close navigation">
+      <span class="close-line"></span>
+      <span class="close-line"></span>
+    </button>
+    <nav class="mobile-nav-inner">
+      <a href="#about"      class="mobile-nav-link" data-index="01">Profile</a>
+      <a href="#projects"   class="mobile-nav-link" data-index="02">Projects</a>
+      <a href="#skills"     class="mobile-nav-link" data-index="03">Abilities</a>
+      <a href="#experience" class="mobile-nav-link" data-index="04">Log</a>
+      <a href="#contact"    class="mobile-nav-link" data-index="05">Contact</a>
+      <a href="resume.html" class="mobile-nav-link mobile-nav-resume">Resume</a>
+    </nav>
+  </div>
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section id="hero">
@@ -160,18 +183,18 @@
             </div>
             <div class="entity-stat">
               <span class="estat-label">NO. OF ECHOS</span>
-              <span class="estat-value legendary-text">5+ Projects</span>
+              <span class="estat-value legendary-text">8+ Projects</span>
             </div>
           </div>
 
         </div>
 
         <div class="about-text">
-           <p class="reveal">
-            <strong>Hey — I'm Poojan.</strong> A fresh <span class="ice-text">Bachelor of IT</span> graduate from Macquarie University — Software Technology major, Data Science minor. I interned at Robotics Marketer shipping backend features to 4000+ users, built a <span class="ice-text">custom programming language in Java</span> from scratch, and rendered 3D scenes with GLSL shaders. I care about backend systems and the craft of building them well.
+          <p class="reveal">
+            <strong>Hey, I'm Poojan.</strong> I recently finished a <span class="ice-text">Bachelor of IT</span> at Macquarie University, majoring in Software Technology with a Data Science minor. During my internship at Robotics Marketer I worked on a backend serving 4000+ users — real production pressure, real deadlines. Since then I've built a <span class="ice-text">full-stack exam platform with AI essay marking</span>, a deployed business website with a CI/CD pipeline, and a custom programming language in Java. Backend is where I feel most at home, but I'll go wherever the problem is.
           </p>
           <p class="reveal reveal-delay-1">
-            Outside the terminal: <strong>One Piece</strong> since forever, <em>Shadow Slave</em> recently consumed my soul, and Valorant when the grind allows.
+            Outside of work: I've been reading One Piece since I learned about anime[it was my first one] and I'm not stopping now. Currently deep into <em>Shadow Slave</em>. I play games when I have the time.
           </p>
           <div class="about-stats reveal reveal-delay-4">
             <div class="stat-box">
@@ -204,7 +227,7 @@
 
       <div class="projects-grid">
 
-        <!-- 001 FEATURED: WaterFlo DSL -->
+        <!-- 001 FEATURED: Selective Prep -->
         <div class="project-card featured reveal">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
@@ -213,32 +236,40 @@
           <div class="card-scan-line"></div>
           <div class="project-body">
             <div class="project-number legendary-text">// 001 — LEGENDARY</div>
-            <div class="project-name" data-text="WaterFlo DSL">WaterFlo DSL</div>
-            <div class="project-type">Domain-Specific Language · Compiler Design</div>
+            <div class="project-name" data-text="Selective Prep">Selective Prep</div>
+            <div class="project-type">Full Stack Web Application · AI Integration</div>
             <p class="project-desc">
-              Designed and implemented a custom programming language in Java to model and simulate river flow dynamics. Built the full language pipeline including lexer, parser, abstract syntax tree (AST), and interpreter, enabling structured execution of domain-specific programs.</p>
+              A full-stack exam practice platform for the NSW Selective Placement Test. Go/Chi REST API, PostgreSQL via Supabase, React/TypeScript frontend. Integrated Claude Haiku server-side to AI-mark student essays against NSW marking criteria. Deployed on Vercel + Railway with auto-deploy on push.</p>
             <div class="project-stack">
-              <span class="stack-tag">Java</span>
-              <span class="stack-tag">Compiler Design</span>
-              <span class="stack-tag">AST</span>
-              <span class="stack-tag">Lexer / Parser</span>
-              <span class="stack-tag">Language Design</span>
+              <span class="stack-tag">Go / Chi</span>
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">TypeScript</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">Supabase</span>
+              <span class="stack-tag">Claude API</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/PoojanManojkumarPatel/WaterFlo--Domain-Specific-Language" target="_blank" class="project-link">
-                <img src="images/github.png" alt="GitHub" class="github-icon">
-                GitHub
+              <a href="https://selective-preparation.vercel.app" target="_blank" class="project-link">
+                <img src="images/site.png" alt="GitHub" class="github-icon">
+                Site-Link
               </a>
             </div>
           </div>
           <div class="project-sigil" aria-hidden="true">
             <svg viewBox="0 0 200 200" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10"  y="10"  width="180" height="180" fill="none" stroke="rgba(140,120,220,0.12)" stroke-width="1"/>
-              <rect x="30"  y="30"  width="140" height="140" fill="none" stroke="rgba(140,120,220,0.08)" stroke-width="1"/>
-              <line x1="100" y1="10"  x2="100" y2="190" stroke="rgba(140,120,220,0.06)" stroke-width="1"/>
-              <line x1="10"  y1="100" x2="190" y2="100" stroke="rgba(140,120,220,0.06)" stroke-width="1"/>
-              <polygon points="100,20 180,180 20,180" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
-              <text x="100" y="118" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="36" fill="rgba(201,168,76,0.25)">&lt;/&gt;</text>
+              <rect x="10" y="10" width="180" height="180" fill="none" stroke="rgba(140,120,220,0.12)" stroke-width="1"/>
+              <rect x="30" y="30" width="140" height="140" fill="none" stroke="rgba(140,120,220,0.08)" stroke-width="1"/>
+              <!-- DB cylinder -->
+              <ellipse cx="100" cy="68" rx="32" ry="10" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.2"/>
+              <line x1="68" y1="68" x2="68" y2="98" stroke="rgba(201,168,76,0.22)" stroke-width="1.2"/>
+              <line x1="132" y1="68" x2="132" y2="98" stroke="rgba(201,168,76,0.22)" stroke-width="1.2"/>
+              <ellipse cx="100" cy="98" rx="32" ry="10" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="1.2"/>
+              <!-- API arrow -->
+              <line x1="100" y1="112" x2="100" y2="138" stroke="rgba(168,184,232,0.4)" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <polygon points="100,145 95,135 105,135" fill="rgba(168,184,232,0.4)"/>
+              <!-- Frontend box -->
+              <rect x="72" y="148" width="56" height="28" rx="2" fill="none" stroke="rgba(168,184,232,0.3)" stroke-width="1"/>
+              <text x="100" y="167" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(168,184,232,0.5)">&lt;UI/&gt;</text>
               <rect x="10" y="10" width="180" height="180" fill="none" stroke="rgba(140,120,220,0.2)" stroke-width="0.5" stroke-dasharray="4 8">
                 <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="30s" repeatCount="indefinite"/>
               </rect>
@@ -246,7 +277,7 @@
           </div>
         </div>
 
-        <!-- 002 OpenGL Island Scene -->
+        <!-- 002 Prime Towing & Hauling -->
         <div class="project-card reveal reveal-delay-1">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
@@ -254,12 +285,68 @@
           <div class="panel-corner br"></div>
           <div class="card-scan-line"></div>
           <div class="project-number">// 002</div>
+          <div class="project-name" data-text="Prime Towing & Hauling">Prime Towing &amp; Hauling</div>
+          <div class="project-type">Full Stack · Production Website</div>
+          <p class="project-desc">
+            Production website for a real Sydney towing business on a live domain. PHP/MySQL backend with async contact form handling, a visitor analytics tracker, and a brute-force-protected admin dashboard with DB-backed IP throttling. CI/CD via GitHub Actions — PHPUnit and Playwright tests against a real MySQL service container, followed by automated FTP deployment.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">PHP</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">PHPUnit</span>
+            <span class="stack-tag">Playwright</span>
+            <span class="stack-tag">GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://primetowing.au" target="_blank" class="project-link">
+              <img src="images/site.png" alt="GitHub" class="github-icon">
+                Site-Link
+            </a>
+          </div>
+        </div>
+
+        <!-- 003 WaterFlo DSL -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 003</div>
+          <div class="project-name" data-text="WaterFlo DSL">WaterFlo DSL</div>
+          <div class="project-type">Domain-Specific Language · Compiler Design</div>
+          <p class="project-desc">
+            Designed and implemented a custom programming language in Java to model and simulate river flow dynamics. Built the full language pipeline including lexer, recursive-descent parser, AST construction, and tree-walking interpreter, enabling structured execution of domain-specific programs including multi-day dam simulations.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Java</span>
+            <span class="stack-tag">Compiler Design</span>
+            <span class="stack-tag">AST</span>
+            <span class="stack-tag">Lexer / Parser</span>
+            <span class="stack-tag">Language Design</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/PoojanManojkumarPatel/WaterFlo--Domain-Specific-Language" target="_blank" class="project-link">
+              <img src="images/github.png" alt="GitHub" class="github-icon">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- 004 OpenGL Island Scene -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="panel-corner bl"></div>
+          <div class="panel-corner br"></div>
+          <div class="card-scan-line"></div>
+          <div class="project-number">// 004</div>
           <div class="project-name" data-text="OpenGL Island Scene">OpenGL Island Scene</div>
           <div class="project-type">3D Graphics · Real-Time Rendering</div>
           <p class="project-desc">
             A 3D graphics project built using OpenGL and GLSL, focused on rendering an interactive island scene from scratch. Implemented custom shaders, transformations, and rendering logic to simulate lighting, terrain, and visual depth, demonstrating an understanding of the graphics pipeline and real-time rendering concepts.
           </p>
-
           <div class="project-stack">
             <span class="stack-tag">OpenGL</span>
             <span class="stack-tag">GLSL</span>
@@ -275,20 +362,19 @@
           </div>
         </div>
 
-        <!-- 003 BargainHunter -->
-        <div class="project-card reveal reveal-delay-2">
+        <!-- 005 BargainHunter -->
+        <div class="project-card reveal">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
           <div class="panel-corner bl"></div>
           <div class="panel-corner br"></div>
           <div class="card-scan-line"></div>
-          <div class="project-number">// 003</div>
+          <div class="project-number">// 005</div>
           <div class="project-name" data-text="BargainHunter">BargainHunter</div>
           <div class="project-type">Full Stack · Mobile App</div>
           <p class="project-desc">
             A real-time mobile application built with Flutter and Firebase for sharing and discovering product deals. Implemented authentication, image-based posts, and cloud-backed data management using Firestore and Storage, with features such as rating, saving, filtering, and role-based access control for users and administrators.
           </p>
-
           <div class="project-stack">
             <span class="stack-tag">Flutter</span>
             <span class="stack-tag">Dart</span>
@@ -304,20 +390,19 @@
           </div>
         </div>
 
-        <!-- 004 Cataclysm -->
-        <div class="project-card reveal reveal-delay-3">
+        <!-- 006 Cataclysm -->
+        <div class="project-card reveal reveal-delay-1">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
           <div class="panel-corner bl"></div>
           <div class="panel-corner br"></div>
           <div class="card-scan-line"></div>
-          <div class="project-number">// 004</div>
+          <div class="project-number">// 006</div>
           <div class="project-name" data-text="Cataclysm">Cataclysm</div>
           <div class="project-type">Game Development · 3D</div>
           <p class="project-desc">
             A 3D space exploration game developed in Unity and showcased at Macquarie Astronomy Night over multiple years. Implemented custom gameplay mechanics including mouse-based joystick controls, asteroid field navigation, and a timed trail system for dynamic visual interaction, with custom assets created in Blender and gameplay logic in C#.
           </p>
-
           <div class="project-stack">
             <span class="stack-tag">Unity Engine</span>
             <span class="stack-tag">C#</span>
@@ -332,14 +417,14 @@
           </div>
         </div>
 
-        <!-- 005 Interactive Frontend -->
-        <div class="project-card reveal">
+        <!-- 007 Interactive Frontend -->
+        <div class="project-card reveal reveal-delay-2">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
           <div class="panel-corner bl"></div>
           <div class="panel-corner br"></div>
           <div class="card-scan-line"></div>
-          <div class="project-number">// 005</div>
+          <div class="project-number">// 007</div>
           <div class="project-name" data-text="Interactive Frontend Experience">Interactive Frontend Experience</div>
           <div class="project-type">Frontend · Web Animations</div>
           <p class="project-desc">
@@ -354,25 +439,24 @@
           <div class="project-links">
             <a href="https://github.com/PoojanManojkumarPatel/valorant_themed_birthday_card_template" target="_blank" class="project-link">
               <img src="images/github.png" alt="GitHub" class="github-icon">
-          GitHub
-        </a>
+              GitHub
+            </a>
           </div>
         </div>
 
-        <!-- 006 CricketOracle -->
-        <div class="project-card reveal reveal-delay-1">
+        <!-- 008 CricketOracle -->
+        <div class="project-card reveal reveal-delay-3">
           <div class="panel-corner tl"></div>
           <div class="panel-corner tr"></div>
           <div class="panel-corner bl"></div>
           <div class="panel-corner br"></div>
           <div class="card-scan-line"></div>
-          <div class="project-number">// 006</div>
+          <div class="project-number">// 008</div>
           <div class="project-name" data-text="CricketOracle">CricketOracle</div>
           <div class="project-type">Machine Learning · Data Science</div>
           <p class="project-desc">
             A machine learning model built in Python to predict cricket match outcomes using historical data, player statistics, and match conditions. Designed to evaluate pre-match scenarios with ~60–70% accuracy, improving further with additional contextual inputs, demonstrating practical application of data-driven decision making.
           </p>
-
           <div class="project-stack">
             <span class="stack-tag">Python</span>
             <span class="stack-tag">Scikit-learn</span>
@@ -416,7 +500,11 @@
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="87"></div></div>
             </div>
             <div class="skill-item">
-              <div class="skill-name-row"><span class="skill-name">JavaScript</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-name-row"><span class="skill-name">Go</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">JavaScript / TypeScript</span><span class="skill-level">INTERMEDIATE</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
             </div>
             <div class="skill-item">
@@ -448,28 +536,36 @@
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
             </div>
             <div class="skill-item">
-              <div class="skill-name-row"><span class="skill-name">Flutter</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-name-row"><span class="skill-name">React</span><span class="skill-level">INTERMEDIATE</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Go / Chi</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">PostgreSQL / Supabase</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="67"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-name-row"><span class="skill-name">MongoDB</span><span class="skill-level">INTERMEDIATE</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
             </div>
             <div class="skill-item">
-              <div class="skill-name-row"><span class="skill-name">Firebase</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-name-row"><span class="skill-name">Flutter / Firebase</span><span class="skill-level">INTERMEDIATE</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name-row"><span class="skill-name">ReactJS</span><span class="skill-level">INTERMEDIATE</span></div>
-              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="50"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-name-row"><span class="skill-name">MySQL / Git</span><span class="skill-level">COMFORTABLE</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="75"></div></div>
             </div>
             <div class="skill-item">
-              <div class="skill-name-row"><span class="skill-name">Unity</span><span class="skill-level">COMFORTABLE</span></div>
-              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="75"></div></div>
+              <div class="skill-name-row"><span class="skill-name">CI/CD · GitHub Actions</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">PHPUnit / Playwright</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="60"></div></div>
             </div>
           </div>
         </div>
@@ -492,6 +588,18 @@
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="78"></div></div>
             </div>
             <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Distributed Systems</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Software Architecture</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Data Modelling</span><span class="skill-level">INTERMEDIATE</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
               <div class="skill-name-row"><span class="skill-name">Compiler Design</span><span class="skill-level">APPLIED</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="62"></div></div>
             </div>
@@ -502,6 +610,30 @@
             <div class="skill-item">
               <div class="skill-name-row"><span class="skill-name">Agile / SDLC</span><span class="skill-level">PRACTISED</span></div>
               <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay-3">
+          <div class="panel-corner tl"></div>
+          <div class="panel-corner tr"></div>
+          <div class="skill-cat-title">[ GENERATIVE AI ]</div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Anthropic Claude API</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="72"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">LLM Integration (server-side)</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">Prompt Engineering</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name-row"><span class="skill-name">AI-Assisted Pipelines</span><span class="skill-level">APPLIED</span></div>
+              <div class="skill-bar"><div class="skill-bar-track"></div><div class="skill-bar-fill" data-width="65"></div></div>
             </div>
           </div>
         </div>

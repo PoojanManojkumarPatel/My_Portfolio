@@ -1190,6 +1190,269 @@ footer p {
   .resume-header { flex-direction: column; align-items: flex-start; }
 }
 
+/* ══════════ NAV RESUME BUTTON ══════════ */
+.nav-resume {
+  font-family:     'JetBrains Mono', monospace;
+  font-size:       0.6rem;
+  letter-spacing:  0.3em;
+  text-transform:  uppercase;
+  text-decoration: none;
+  color:           var(--gold);
+  border:          1px solid rgba(201, 168, 76, 0.45);
+  padding:         0.42rem 1.1rem;
+  position:        relative;
+  overflow:        hidden;
+  clip-path:       polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+  transition:      color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  box-shadow:      0 0 8px rgba(201, 168, 76, 0.1);
+}
+.nav-resume::before {
+  content:    '';
+  position:   absolute;
+  inset:      0;
+  background: var(--gold);
+  transform:  translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.nav-resume:hover {
+  color:        var(--void);
+  border-color: var(--gold);
+  box-shadow:   0 0 18px var(--gold-glow);
+}
+.nav-resume:hover::before { transform: translateX(0); }
+.nav-resume span          { position: relative; z-index: 1; }
+
+/* ══════════ HAMBURGER ══════════ */
+.hamburger {
+  display:         none;
+  flex-direction:  column;
+  justify-content: center;
+  gap:             5px;
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  padding:         6px 4px;
+  z-index:         200;
+  position:        relative;
+}
+.ham-line {
+  display:          block;
+  width:            24px;
+  height:           2px;
+  background:       var(--ice);
+  border-radius:    1px;
+  box-shadow:       0 0 6px var(--ice-glow);
+  transform-origin: center;
+  transition:
+    transform  0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity    0.3s ease,
+    width      0.3s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* X — void unsealed */
+.hamburger.open .ham-line:nth-child(1) {
+  transform:  translateY(7px) rotate(45deg);
+  background: var(--nightmare);
+  box-shadow: 0 0 12px var(--nm-glow), 0 0 24px rgba(123,79,200,0.4);
+}
+.hamburger.open .ham-line:nth-child(2) {
+  opacity: 0;
+  width:   0;
+}
+.hamburger.open .ham-line:nth-child(3) {
+  transform:  translateY(-7px) rotate(-45deg);
+  background: var(--nightmare);
+  box-shadow: 0 0 12px var(--nm-glow), 0 0 24px rgba(123,79,200,0.4);
+}
+
+/* ══════════ MOBILE NAV OVERLAY ══════════ */
+.mobile-nav {
+  position:        fixed;
+  inset:           0;
+  z-index:         150;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  background:      radial-gradient(ellipse at 50% 0%, rgba(123,79,200,0.2) 0%, rgba(3,3,9,0.97) 55%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  /* sealed void */
+  clip-path:      polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  opacity:         0;
+  pointer-events:  none;
+  transition:
+    clip-path 0.55s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity   0.25s ease;
+}
+.mobile-nav::before {
+  content:  '';
+  position: absolute;
+  inset:    0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(123,79,200,0.025) 3px,
+    rgba(123,79,200,0.025) 4px
+  );
+  pointer-events: none;
+}
+/* torn open */
+.mobile-nav.open {
+  clip-path:     polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  opacity:       1;
+  pointer-events: auto;
+  transition:
+    clip-path 0.55s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity   0.08s ease;
+}
+
+/* ── Close button inside overlay ── */
+.mobile-nav-close {
+  position:        absolute;
+  top:             1rem;
+  right:           1.25rem;
+  z-index:         10;
+  background:      none;
+  border:          1px solid rgba(168, 184, 232, 0.25);
+  cursor:          pointer;
+  width:           44px;
+  height:          44px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  opacity:         0;
+  transform:       scale(0.75);
+  pointer-events:  none;
+  transition:      opacity 0.3s, transform 0.3s, border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav.open .mobile-nav-close {
+  opacity:        1;
+  transform:      scale(1);
+  pointer-events: auto;
+  transition:     opacity 0.35s 0.5s ease, transform 0.35s 0.5s ease,
+                  border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.mobile-nav-close:hover,
+.mobile-nav-close:focus-visible {
+  border-color: var(--nightmare);
+  box-shadow:   0 0 16px var(--nm-glow);
+  background:   rgba(123, 79, 200, 0.08);
+  outline:      none;
+}
+.mobile-nav-close:active {
+  background:   rgba(123, 79, 200, 0.2);
+  border-color: var(--nightmare);
+  box-shadow:   0 0 24px var(--nm-glow);
+  transform:    scale(0.88);
+}
+.mobile-nav-close:hover .close-line,
+.mobile-nav-close:active .close-line,
+.mobile-nav-close:focus-visible .close-line {
+  background: var(--nightmare);
+  box-shadow: 0 0 8px var(--nm-glow);
+}
+.close-line {
+  position:      absolute;
+  width:         18px;
+  height:        2px;
+  background:    var(--ice);
+  border-radius: 1px;
+  box-shadow:    0 0 4px var(--ice-glow);
+  transition:    background 0.25s, box-shadow 0.25s;
+}
+.close-line:nth-child(1) { transform: rotate(45deg); }
+.close-line:nth-child(2) { transform: rotate(-45deg); }
+
+.mobile-nav-void {
+  position: absolute;
+  top:      0; left: 0; right: 0;
+  height:   3px;
+  background: linear-gradient(to right, transparent, var(--nightmare), var(--gold), var(--nightmare), transparent);
+  box-shadow: 0 0 20px var(--nm-glow), 0 0 40px rgba(123,79,200,0.3);
+  animation:  void-pulse 3s ease-in-out infinite;
+}
+@keyframes void-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1;   box-shadow: 0 0 30px var(--nm-glow), 0 0 60px rgba(123,79,200,0.5); }
+}
+
+.mobile-nav-inner {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            2.2rem;
+  padding:        2rem 0;
+}
+
+/* items — materialise from the void */
+.mobile-nav-link {
+  font-family:     'Cinzel', serif;
+  font-size:       1.1rem;
+  font-weight:     600;
+  letter-spacing:  0.35em;
+  text-transform:  uppercase;
+  text-decoration: none;
+  color:           var(--text-dim);
+  position:        relative;
+  opacity:         0;
+  transform:       translateY(14px);
+  transition:      color 0.3s, text-shadow 0.3s, opacity 0.2s, transform 0.2s;
+}
+.mobile-nav-link::before {
+  content:     attr(data-index);
+  position:    absolute;
+  left:        -2.2rem;
+  top:         50%;
+  transform:   translateY(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size:   0.5rem;
+  color:       var(--ice-dim);
+  letter-spacing: 0.1em;
+}
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color:       var(--ice);
+  text-shadow: 0 0 20px var(--ice-glow), 0 0 40px rgba(168,184,232,0.12);
+}
+
+/* staggered materialisation */
+.mobile-nav.open .mobile-nav-link {
+  opacity:   1;
+  transform: translateY(0);
+}
+.mobile-nav.open .mobile-nav-link:nth-child(1) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.20s ease, transform 0.4s 0.20s ease; }
+.mobile-nav.open .mobile-nav-link:nth-child(2) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.29s ease, transform 0.4s 0.29s ease; }
+.mobile-nav.open .mobile-nav-link:nth-child(3) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.38s ease, transform 0.4s 0.38s ease; }
+.mobile-nav.open .mobile-nav-link:nth-child(4) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.47s ease, transform 0.4s 0.47s ease; }
+.mobile-nav.open .mobile-nav-link:nth-child(5) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.56s ease, transform 0.4s 0.56s ease; }
+.mobile-nav.open .mobile-nav-link:nth-child(6) { transition: color 0.3s, text-shadow 0.3s, opacity 0.4s 0.65s ease, transform 0.4s 0.65s ease; }
+
+/* Resume — legendary gold treatment */
+.mobile-nav-resume {
+  color:        var(--gold) !important;
+  text-shadow:  0 0 14px var(--gold-glow);
+  border:       1px solid rgba(201, 168, 76, 0.3);
+  padding:      0.5rem 1.8rem;
+  margin-top:   0.4rem;
+  clip-path:    polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  transition:   color 0.3s, text-shadow 0.3s, border-color 0.3s, box-shadow 0.3s, opacity 0.2s, transform 0.2s !important;
+}
+.mobile-nav-resume:hover {
+  text-shadow:  0 0 22px var(--gold-glow), 0 0 44px rgba(201,168,76,0.3) !important;
+  border-color: var(--gold) !important;
+  box-shadow:   0 0 18px var(--gold-glow);
+}
+.mobile-nav.open .mobile-nav-resume {
+  transition: color 0.3s, text-shadow 0.3s, border-color 0.3s, box-shadow 0.3s,
+              opacity 0.4s 0.65s ease, transform 0.4s 0.65s ease !important;
+}
+
 /* ══════════ RESPONSIVE ══════════ */
 @media (max-width: 900px) {
   .project-card.featured {
@@ -1201,7 +1464,9 @@ footer p {
 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+  .nav-links  { display: none; }
+  .nav-resume { display: none; }
+  .hamburger  { display: flex; }
 
   .about-grid { grid-template-columns: 1fr; }
   .about-panel { position: static; }

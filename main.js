@@ -68,3 +68,48 @@ const scheduleFlicker = () => {
 };
 
 scheduleFlicker();
+
+// ══════════ HAMBURGER / MOBILE NAV ══════════
+const hamburger     = document.querySelector('.hamburger');
+const mobileNav     = document.querySelector('.mobile-nav');
+const mobileLinks   = document.querySelectorAll('.mobile-nav-link');
+const mobileClose   = document.querySelector('.mobile-nav-close');
+
+const openMenu = () => {
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+
+const closeMenu = () => {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Close button inside the overlay
+mobileClose.addEventListener('click', () => closeMenu());
+
+// Close on any link tap
+mobileLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeMenu();
+  });
+});
+
+// Close on backdrop tap (clicking the void, not any button/link)
+mobileNav.addEventListener('click', (e) => {
+  if (
+    !e.target.closest('.mobile-nav-inner') &&
+    !e.target.closest('.mobile-nav-close')
+  ) closeMenu();
+});
