@@ -1,3 +1,14 @@
+/* ── Disable reveal animations (main.js observer doesn't fire on hidden #app) */
+#app .reveal,
+#app .reveal-delay-1,
+#app .reveal-delay-2,
+#app .reveal-delay-3,
+#app .reveal-delay-4 {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ── Auth Gate ──────────────────────────────────────────────────────────── */
 #auth-gate {
   position: fixed;
