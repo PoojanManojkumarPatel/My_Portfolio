@@ -1,0 +1,6 @@
+{
+  "files": ["index.html", "resume.html", "admin.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
